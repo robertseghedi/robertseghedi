@@ -6,12 +6,11 @@
 [![Twitter Badge](https://img.shields.io/badge/-@robertseghedi-00acee?style=flat&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=robertseghedi "Follow on Twitter")
 [![Messenger Badge](https://img.shields.io/badge/-Messenger-0078FF?style=flat&logo=Messenger&logoColor=white)](https://m.me/robertseghedi "Connect on Facebook")
 
-I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursuing a Masters in Computer Science, who is passionate about Data Science :bar_chart:, Pythonic programming :snake:, and open source :octocat:. I love to learn and contribute in any and every possible way.
+I am a full-stack enterprise web developer, pursuing a Masters in Computer Science, who is passionate about Data Science :bar_chart:, Modular programming :snake:, and open source :octocat:. I love to learn and contribute in any and every possible way. My main life channels are Laravel & VueJS.
 
-- 🌱 I’m currently learning Functional Programming and Knowledge Graphs
 - 👯 I’m looking to collaborate on any Data Science project which seems interesting or useful
 - 💬 Talk to me about if Earth actually is flat, would headlights work at light speed, and everything in between
-- 📫 How to reach me: Use any of the [badges](#hi-there-im-samujjwaal-) above
+- 📫 How to reach me: Use any of the [badges](#hi-there-im-robert%20seghedi-) above
 - 😄 Pronouns: [He/Him](https://www.mypronouns.org/he-him)
 - 👾 Fun fact: Everything that has been or could be written/said already exists in the [Library of Babel](https://libraryofbabel.info/)
 
