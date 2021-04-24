@@ -67,5 +67,5 @@ For future reference
   <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samujjwaal" width="350"/>
 </a>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi&langs_count=8&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 -->
