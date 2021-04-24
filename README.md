@@ -23,7 +23,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
   <a href="https://samujjwaal.tech/"><img src="https://github.com/samujjwaal/samujjwaal/raw/master/etc/coffee.png" align="right" height="275" /></a>
 
   [![My Github Stats](https://github-readme-stats.vercel.app/api?username=robertseghedi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)](https://github.com/robertseghedi)
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=robertseghedi)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi&langs_count=8&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
   ![Profile Views](https://komarev.com/ghpvc/?username=samujjwaal&color=blue)
   ----
