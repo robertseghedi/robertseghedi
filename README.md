@@ -64,8 +64,8 @@ For future reference
   <img align="left" src="https://github-readme-stats.vercel.app/api?username=samujjwaal&hide=stars,commits,prs,issues,contribs&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515" />
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
-  <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samujjwaal" width="350"/>
+  <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi&langs_count=8&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats" width="350"/>
+  
 </a>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi&langs_count=8&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 -->
