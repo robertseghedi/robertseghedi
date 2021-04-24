@@ -35,5 +35,4 @@ Find me around the web :globe_with_meridians:
 
 ![Profile last updated](https://img.shields.io/github/last-commit/samujjwaal/samujjwaal/master?label=Last%20updated&style=flat)
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=samujjwaal.samujjwaal)
-[![HitCount](http://hits.dwyl.com/samujjwaal/samujjwaal.svg)](http://hits.dwyl.com/samujjwaal/samujjwaal)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=robertseghedi.robertseghedi)
