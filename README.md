@@ -6,8 +6,6 @@
 [![Twitter Badge](https://img.shields.io/badge/-@robertseghedi-00acee?style=flat&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=robertseghedi "Follow on Twitter")
 [![Messenger Badge](https://img.shields.io/badge/-Messenger-0078FF?style=flat&logo=Messenger&logoColor=white)](https://m.me/robertseghedi "Connect on Facebook")
 
-<a href="https://samujjwaal.tech/"><img src="https://i.postimg.cc/PqQK7wTL/robertseghedi-ph.png" align="right" height="200" /></a>
-
 I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursuing a Masters in Computer Science, who is passionate about Data Science :bar_chart:, Pythonic programming :snake:, and open source :octocat:. I love to learn and contribute in any and every possible way.
 
 - 🌱 I’m currently learning Functional Programming and Knowledge Graphs
@@ -18,7 +16,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
 - 👾 Fun fact: Everything that has been or could be written/said already exists in the [Library of Babel](https://libraryofbabel.info/)
 
 ### Some of my Github Public Stats :computer:
-<a href="https://samujjwaal.tech/"><img src="https://github.com/samujjwaal/samujjwaal/raw/master/etc/coffee.png" align="right" height="275" /></a>
+<a href="https://robertseghedi.dev/"><img src="https://github.com/samujjwaal/samujjwaal/raw/master/etc/coffee.png" align="right" height="275" /></a>
 
   [![My Github Stats](https://github-readme-stats.vercel.app/api?username=robertseghedi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515&count_private=true)](https://github.com/robertseghedi)
 
@@ -69,5 +67,5 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
   <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samujjwaal" width="350"/>
 </a>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=samujjwaal)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi)
 -->
