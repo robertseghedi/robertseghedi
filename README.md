@@ -6,7 +6,7 @@
 [![Twitter Badge](https://img.shields.io/badge/-@robertseghedi-00acee?style=flat&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=robertseghedi "Follow on Twitter")
 [![Messenger Badge](https://img.shields.io/badge/-Messenger-0078FF?style=flat&logo=Messenger&logoColor=white)](https://m.me/robertseghedi "Connect on Facebook")
 
-I am a full-stack enterprise web developer, pursuing a Masters in Computer Science, who is passionate about Data Science :bar_chart:, Modular programming :snake:, and open source :octocat:. I love to learn and contribute in any and every possible way. My main life channels are Laravel & VueJS.
+I am a full-stack enterprise web developer, who is passionate about Data Science :bar_chart:, Modular programming :snake:, and open source :octocat:. I love to learn and contribute in any and every possible way. My main life channels are Laravel & VueJS.
 
 - 👯 I’m looking to collaborate on any Data Science project which seems interesting or useful
 - 💬 Talk to me about if Earth actually is flat, would headlights work at light speed, and everything in between
