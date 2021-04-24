@@ -38,7 +38,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
 
 ![Profile last updated](https://img.shields.io/github/last-commit/samujjwaal/samujjwaal/master?label=Last%20updated&style=flat)
 
-<!--For future reference 
+For future reference 
 <a href="https://piraces.dev/"><img alt="Robot logo" src="https://github.com/piraces/piraces/raw/master/robot_dark.png" align="right" height="150" /></a>
 
 - 🔭 I’m currently working on ...
