@@ -33,6 +33,6 @@ Find me around the web :globe_with_meridians:
 [![Reddit Badge](https://img.shields.io/badge/-u/daftdey-FF4500?style=flat&logo=Reddit&logoColor=white)](https://www.reddit.com/user/daftdey/ "Find on Reddit")
 ----
 
-![Profile last updated](https://img.shields.io/github/last-commit/samujjwaal/samujjwaal/master?label=Last%20updated&style=flat)
+![Profile last updated](https://img.shields.io/github/last-commit/robertseghedi/robertseghedi/master?label=Last%20updated&style=flat)
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=robertseghedi.robertseghedi)
