@@ -25,7 +25,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
 
 ### Find me around the web :globe_with_meridians:
   
-[![DEV Badge](https://img.shields.io/badge/-samujjwaal-0A0A0A?style=flat&logo=dev.to&logoColor=white)](https://dev.to/robertseghedi)
-[![StackOverflow Badge](https://img.shields.io/badge/-daftdey-FE7A16?style=flat&logo=Stack%20Overflow&logoColor=white&)](https://stackoverflow.com/users/13381861/robert-seghedi?tab=profile)
+[![DEV Badge](https://img.shields.io/badge/-robertseghedi-0A0A0A?style=flat&logo=dev.to&logoColor=white)](https://dev.to/robertseghedi)
+[![StackOverflow Badge](https://img.shields.io/badge/-robertseghedi-FE7A16?style=flat&logo=Stack%20Overflow&logoColor=white&)](https://stackoverflow.com/users/13381861/robert-seghedi?tab=profile)
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-C13584?style=flat&logo=Instagram&logoColor=white)](https://www.instagram.com/robertseghedi/ "Follow on Instagram")
 [![YouTube Badge](https://img.shields.io/badge/-YouTube-FF0000?style=flat&logo=YouTube&logoColor=white)](https://www.youtube.com/robertseghedi/playlists "My YouTube playlists")
