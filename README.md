@@ -20,7 +20,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
 
   [![My Github Stats](https://github-readme-stats.vercel.app/api?username=robertseghedi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515&count_private=true)](https://github.com/robertseghedi)
 
-  ![Profile Views](https://komarev.com/ghpvc/?username=samujjwaal&color=blue)
+  ![Profile Views](https://komarev.com/ghpvc/?username=robertseghedi&color=blue)
 
 Find me around the web :globe_with_meridians:
   
@@ -30,9 +30,6 @@ Find me around the web :globe_with_meridians:
 [![Soundcloud Badge](https://img.shields.io/badge/-Soundcloud-FE5000?style=flat&logo=Soundcloud&logoColor=white)](https://soundcloud.com/daftdey)
 [![Spotify Badge](https://img.shields.io/badge/-Spotify-1DB954?style=flat&logo=Spotify&logoColor=white)](https://open.spotify.com/user/22ydzsykc57ailqsqbn4ycwsq "My Spotify playlists")
 [![YouTube Badge](https://img.shields.io/badge/-YouTube-FF0000?style=flat&logo=YouTube&logoColor=white)](https://www.youtube.com/SamujjwaalDeyJEDI/playlists "My YouTube playlists")
-[![Reddit Badge](https://img.shields.io/badge/-u/daftdey-FF4500?style=flat&logo=Reddit&logoColor=white)](https://www.reddit.com/user/daftdey/ "Find on Reddit")
-----
 
-![Profile last updated](https://img.shields.io/github/last-commit/robertseghedi/robertseghedi/master?label=Last%20updated&style=flat)
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=robertseghedi.robertseghedi)
