@@ -1,9 +1,9 @@
 ## Hi there, I'm Robert Seghedi 👋🏼👨🏻‍💻
 
-[![Gmail Badge](https://img.shields.io/badge/-robertseghedi.dev-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:hello@robertseghedi.dev "Connect via Email")
-[![Linkedin Badge](https://img.shields.io/badge/-Samujjwaal%20Dey-0072b1?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/robertseghedi/ "Connect on LinkedIn")
-[![Telegram Badge](https://img.shields.io/badge/-@daftdey-0088CC?style=flat&logo=Telegram&logoColor=white)](https://t.me/robertseghedi "Contact on Telegram")
-[![Twitter Badge](https://img.shields.io/badge/-@samujjwaal-00acee?style=flat&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=robertseghedi "Follow on Twitter")
+[![Gmail Badge](https://img.shields.io/badge/-hello@robertseghedi.dev-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:hello@robertseghedi.dev "Connect via Email")
+[![Linkedin Badge](https://img.shields.io/badge/-Robert%20Seghedi-0072b1?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/robertseghedi/ "Connect on LinkedIn")
+[![Telegram Badge](https://img.shields.io/badge/-@robertseghedi-0088CC?style=flat&logo=Telegram&logoColor=white)](https://t.me/robertseghedi "Contact on Telegram")
+[![Twitter Badge](https://img.shields.io/badge/-@robertseghedi-00acee?style=flat&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=robertseghedi "Follow on Twitter")
 [![Messenger Badge](https://img.shields.io/badge/-Messenger-0078FF?style=flat&logo=Messenger&logoColor=white)](https://m.me/robertseghedi "Connect on Facebook")
 
 <a href="https://samujjwaal.tech/"><img src="https://github.com/robertseghedi/robertseghedi/etc/python.png" align="right" height="200" /></a>
