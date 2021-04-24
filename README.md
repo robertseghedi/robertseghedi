@@ -21,7 +21,7 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
   [![My Github Stats](https://github-readme-stats.vercel.app/api?username=robertseghedi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515&count_private=true)](https://github.com/robertseghedi)
 
   ![Profile Views](https://komarev.com/ghpvc/?username=robertseghedi&color=blue)
-
+  ![visitors](https://visitor-badge.glitch.me/badge?page_id=robertseghedi.robertseghedi)
 Find me around the web :globe_with_meridians:
   
 [![DEV Badge](https://img.shields.io/badge/-samujjwaal-0A0A0A?style=flat&logo=dev.to&logoColor=white)](https://dev.to/samujjwaal)
@@ -30,6 +30,3 @@ Find me around the web :globe_with_meridians:
 [![Soundcloud Badge](https://img.shields.io/badge/-Soundcloud-FE5000?style=flat&logo=Soundcloud&logoColor=white)](https://soundcloud.com/daftdey)
 [![Spotify Badge](https://img.shields.io/badge/-Spotify-1DB954?style=flat&logo=Spotify&logoColor=white)](https://open.spotify.com/user/22ydzsykc57ailqsqbn4ycwsq "My Spotify playlists")
 [![YouTube Badge](https://img.shields.io/badge/-YouTube-FF0000?style=flat&logo=YouTube&logoColor=white)](https://www.youtube.com/SamujjwaalDeyJEDI/playlists "My YouTube playlists")
-
-
-![visitors](https://visitor-badge.glitch.me/badge?page_id=robertseghedi.robertseghedi)
