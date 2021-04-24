@@ -17,18 +17,12 @@ I am a 2nd-year Graduate Student at The University of Illinois at Chicago, pursu
 - 😄 Pronouns: [He/Him](https://www.mypronouns.org/he-him)
 - 👾 Fun fact: Everything that has been or could be written/said already exists in the [Library of Babel](https://libraryofbabel.info/)
 
-<details>
-  <summary>Some of my Github Public Stats :computer:</summary>
-  
-  <a href="https://samujjwaal.tech/"><img src="https://github.com/samujjwaal/samujjwaal/raw/master/etc/coffee.png" align="right" height="275" /></a>
+### Some of my Github Public Stats :computer:
+<a href="https://samujjwaal.tech/"><img src="https://github.com/samujjwaal/samujjwaal/raw/master/etc/coffee.png" align="right" height="275" /></a>
 
   [![My Github Stats](https://github-readme-stats.vercel.app/api?username=robertseghedi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515&count_private=true)](https://github.com/robertseghedi)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=robertseghedi&langs_count=8&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
   ![Profile Views](https://komarev.com/ghpvc/?username=samujjwaal&color=blue)
-  ----
-  
-</details>
 
 <details>
   <summary>Find me around the web :globe_with_meridians:</summary>
