@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""Generates assets/ascii-hero.svg: an animated ASCII header for the profile README.
+"""Generates assets/ascii-hero.gif: an animated ASCII header for the profile README.
 
-Run from the repo root: python3 scripts/ascii_hero.py
+Run from the repo root: python3 scripts/ascii_hero.py  (needs Pillow, macOS Menlo font)
 """
 import math
 import random
 from pathlib import Path
 
+from PIL import Image, ImageDraw, ImageFont
+
 COLS, ROWS = 200, 30
 CW, RH = 6, 12  # cell size in px (monospace advance ~0.6em at 10px)
 PAD_Y = 12
 W, H = COLS * CW, ROWS * RH + PAD_Y * 2
+SCALE = 1.5  # output px per layout px, for sharper glyphs on retina
+FONT_PATH = "/System/Library/Fonts/Menlo.ttc"
 SEED = 7
 
 TITLE = "ROBERT SEGHEDI"
@@ -18,10 +22,9 @@ SUBTITLE = "co-founder @ peal.dev  //  shipping at 3am from Romania"
 RAMP = ".,:-=+*#%@"
 PALETTE = ["#431407", "#7c2d12", "#c2410c", "#ea580c", "#f97316", "#fb923c"]
 BG = "#0d1117"
-WAVES = 12  # number of animation-delay buckets (one animated <g> each)
-PERIOD = 4.8  # seconds
-STEPS = 24  # opacity changes per period; delays are multiples of a step so every bucket
-# changes on the same tick and the browser repaints ~5x/s instead of 60x/s
+WAVES = 12  # buckets that light up one after another
+STEPS = 24  # frames per loop
+FRAME_MS = 200
 
 FONT = {
     "R": ["11110", "10001", "10001", "11110", "10100", "10010", "10001"],
@@ -107,60 +110,56 @@ def main():
             level = min(int(v * len(PALETTE) * 1.4), len(PALETTE) - 1)
             cells.append((x, y, ch, f"c{level}", bucket))
 
-    tick = PERIOD / STEPS
-    frames = "".join(
-        f"{k * 100 / STEPS:.2f}%{{opacity:{0.14 + 0.86 * max(math.cos((k / STEPS - 0.45) * math.pi * 2.2), 0) ** 2:.2f}}}"
-        for k in range(STEPS + 1)
-    )
-    css = [
-        "text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:10px}",
-        f".w{{opacity:.14;animation:p {PERIOD}s step-end infinite}}",
-        f"@keyframes p{{{frames}}}",
-        ".t{fill:#fdba74}",
-        ".s{fill:#c2410c;font-size:15px;letter-spacing:1px}",
-        "@media (prefers-reduced-motion:reduce){.w{animation:none;opacity:.6}}",
-    ]
-    css += [f".c{i}{{fill:{c}}}" for i, c in enumerate(PALETTE)]
-    css += [f".d{i}{{animation-delay:-{round(i * STEPS / WAVES) * tick:.2f}s}}" for i in range(WAVES)]
+    def hex_rgb(c):
+        return tuple(int(c[i : i + 2], 16) for i in (1, 3, 5))
 
-    out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="{TITLE}">',
-        f"<title>{TITLE}</title>",
-        f"<style>{''.join(css)}</style>",
-        "<defs>",
-        '<radialGradient id="glow" cx=".5" cy=".42" r=".45"><stop offset="0" stop-color="#f97316" stop-opacity=".12"/>'
-        '<stop offset="1" stop-color="#f97316" stop-opacity="0"/></radialGradient>',
-        "</defs>",
-        f'<rect width="{W}" height="{H}" rx="12" fill="{BG}"/>',
-        f'<rect width="{W}" height="{H}" rx="12" fill="url(#glow)"/>',
-    ]
+    def blend(c, a):
+        return tuple(round(b + (f - b) * a) for f, b in zip(hex_rgb(c), hex_rgb(BG)))
 
-    def text_run(cls, glyphs):
-        chars = "".join({"&": "&amp;", "<": "&lt;", ">": "&gt;"}.get(ch, ch) for _, _, ch in glyphs)
-        xs = " ".join(str(x * CW) for x, _, _ in glyphs)
-        ys = " ".join(str(PAD_Y + y * RH + 10) for _, y, _ in glyphs)
-        return f'<text class="{cls}" x="{xs}" y="{ys}">{chars}</text>'
+    def brightness(k):
+        return 0.14 + 0.86 * max(math.cos((k / STEPS - 0.45) * math.pi * 2.2), 0) ** 2
 
-    # one <text> per (bucket, color) with per-glyph x/y lists keeps the DOM tiny
-    groups = {}
-    for x, y, ch, cls, bucket in cells:
-        groups.setdefault(bucket, {}).setdefault(cls, []).append((x, y, ch))
-    title = []
-    for bucket in sorted(groups):
-        title += groups[bucket].pop("t", [])
-        out.append(f'<g class="w d{bucket}">')
-        out += [text_run(cls, glyphs) for cls, glyphs in sorted(groups[bucket].items())]
-        out.append("</g>")
-    out.append(text_run("t", title))
-    sub_y = PAD_Y + sub_row * RH + 12
-    sub = SUBTITLE.replace("peal.dev", "<tspan class=\"c4\">peal.dev</tspan>")
-    out.append(f'<text x="{W / 2}" y="{sub_y}" text-anchor="middle" class="s">{sub}</text>')
-    out.append("</svg>")
+    def s(v):
+        return round(v * SCALE)
 
-    dest = Path(__file__).resolve().parent.parent / "assets" / "ascii-hero.svg"
+    size = (s(W), s(H))
+    glyph_font = ImageFont.truetype(FONT_PATH, s(10))
+    sub_font = ImageFont.truetype(FONT_PATH, s(15))
+
+    # static layer: background, title, subtitle (no gradients: they band after quantizing)
+    base = Image.new("RGB", size, BG)
+    draw = ImageDraw.Draw(base)
+    for x, y, ch, cls, _ in cells:
+        if cls == "t":
+            draw.text((s(x * CW), s(PAD_Y + y * RH + 10)), ch, font=glyph_font, fill="#fdba74", anchor="ls")
+    parts = [(t, "#c2410c") for t in SUBTITLE.partition("peal.dev")]
+    parts[1] = (parts[1][0], "#f97316")
+    sub_w = sum(draw.textlength(t, font=sub_font) for t, _ in parts)
+    x = (size[0] - sub_w) / 2
+    for t, color in parts:
+        draw.text((x, s(PAD_Y + sub_row * RH + 12)), t, font=sub_font, fill=color, anchor="ls")
+        x += draw.textlength(t, font=sub_font)
+
+    frames = []
+    for k in range(STEPS):
+        frame = base.copy()
+        draw = ImageDraw.Draw(frame)
+        for x, y, ch, cls, bucket in cells:
+            if cls == "t":
+                continue
+            a = brightness((k + round(bucket * STEPS / WAVES)) % STEPS)
+            fill = blend(PALETTE[int(cls[1:])], a)
+            draw.text((s(x * CW), s(PAD_Y + y * RH + 10)), ch, font=glyph_font, fill=fill, anchor="ls")
+        frames.append(frame)
+
+    # one shared palette keeps colors stable between frames
+    palette = frames[0].quantize(colors=96, method=Image.Quantize.MEDIANCUT)
+    frames = [f.quantize(palette=palette, dither=Image.Dither.NONE) for f in frames]
+
+    dest = Path(__file__).resolve().parent.parent / "assets" / "ascii-hero.gif"
     dest.parent.mkdir(exist_ok=True)
-    dest.write_text("\n".join(out))
-    print(f"{dest} — {len(cells)} glyphs, {dest.stat().st_size / 1024:.0f} KB")
+    frames[0].save(dest, save_all=True, append_images=frames[1:], duration=FRAME_MS, loop=0, optimize=True)
+    print(f"{dest} — {len(cells)} glyphs, {len(frames)} frames, {dest.stat().st_size / 1024:.0f} KB")
 
 
 if __name__ == "__main__":

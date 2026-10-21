@@ -1,6 +1,6 @@
 <!-- Header -->
 <p align="center">
-  <img src="./assets/ascii-hero.svg" alt="Robert Seghedi — co-founder @ peal.dev" width="100%" />
+  <img src="./assets/ascii-hero.gif" alt="Robert Seghedi — co-founder @ peal.dev" width="100%" />
 </p>
 
 <p align="center">
