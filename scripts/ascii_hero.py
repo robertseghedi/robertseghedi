@@ -18,8 +18,10 @@ SUBTITLE = "co-founder @ peal.dev  //  shipping at 3am from Romania"
 RAMP = ".,:-=+*#%@"
 PALETTE = ["#431407", "#7c2d12", "#c2410c", "#ea580c", "#f97316", "#fb923c"]
 BG = "#0d1117"
-WAVES = 16  # number of animation-delay buckets
+WAVES = 12  # number of animation-delay buckets (one animated <g> each)
 PERIOD = 4.8  # seconds
+STEPS = 24  # opacity changes per period; delays are multiples of a step so every bucket
+# changes on the same tick and the browser repaints ~5x/s instead of 60x/s
 
 FONT = {
     "R": ["11110", "10001", "10001", "11110", "10100", "10010", "10001"],
@@ -105,42 +107,54 @@ def main():
             level = min(int(v * len(PALETTE) * 1.4), len(PALETTE) - 1)
             cells.append((x, y, ch, f"c{level}", bucket))
 
+    tick = PERIOD / STEPS
+    frames = "".join(
+        f"{k * 100 / STEPS:.2f}%{{opacity:{0.14 + 0.86 * max(math.cos((k / STEPS - 0.45) * math.pi * 2.2), 0) ** 2:.2f}}}"
+        for k in range(STEPS + 1)
+    )
     css = [
-        f"text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:10px}}",
-        f".g text{{animation:p {PERIOD}s ease-in-out infinite;opacity:.18}}",
-        "@keyframes p{0%,100%{opacity:.14}45%{opacity:1}60%{opacity:.85}}",
-        f".t{{fill:#fdba74;animation-name:q!important}}",
-        "@keyframes q{0%,100%{opacity:.7}45%{opacity:1}}",
+        "text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:10px}",
+        f".w{{opacity:.14;animation:p {PERIOD}s step-end infinite}}",
+        f"@keyframes p{{{frames}}}",
+        ".t{fill:#fdba74}",
         ".s{fill:#c2410c;font-size:15px;letter-spacing:1px}",
-        "@media (prefers-reduced-motion:reduce){.g text,.scan{animation:none!important;opacity:.8}}",
-        ".scan{animation:m 7s linear infinite}",
-        f"@keyframes m{{from{{transform:translateX(-300px)}}to{{transform:translateX({W + 300}px)}}}}",
+        "@media (prefers-reduced-motion:reduce){.w{animation:none;opacity:.6}}",
     ]
     css += [f".c{i}{{fill:{c}}}" for i, c in enumerate(PALETTE)]
-    css += [f".d{i}{{animation-delay:-{PERIOD * i / WAVES:.2f}s!important}}" for i in range(WAVES)]
+    css += [f".d{i}{{animation-delay:-{round(i * STEPS / WAVES) * tick:.2f}s}}" for i in range(WAVES)]
 
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="{TITLE}">',
         f"<title>{TITLE}</title>",
         f"<style>{''.join(css)}</style>",
         "<defs>",
-        '<linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#f97316" stop-opacity="0"/>'
-        '<stop offset=".5" stop-color="#f97316" stop-opacity=".07"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></linearGradient>',
         '<radialGradient id="glow" cx=".5" cy=".42" r=".45"><stop offset="0" stop-color="#f97316" stop-opacity=".12"/>'
         '<stop offset="1" stop-color="#f97316" stop-opacity="0"/></radialGradient>',
         "</defs>",
         f'<rect width="{W}" height="{H}" rx="12" fill="{BG}"/>',
         f'<rect width="{W}" height="{H}" rx="12" fill="url(#glow)"/>',
-        '<g class="g">',
     ]
+
+    def text_run(cls, glyphs):
+        chars = "".join({"&": "&amp;", "<": "&lt;", ">": "&gt;"}.get(ch, ch) for _, _, ch in glyphs)
+        xs = " ".join(str(x * CW) for x, _, _ in glyphs)
+        ys = " ".join(str(PAD_Y + y * RH + 10) for _, y, _ in glyphs)
+        return f'<text class="{cls}" x="{xs}" y="{ys}">{chars}</text>'
+
+    # one <text> per (bucket, color) with per-glyph x/y lists keeps the DOM tiny
+    groups = {}
     for x, y, ch, cls, bucket in cells:
-        ch = {"&": "&amp;", "<": "&lt;", ">": "&gt;"}.get(ch, ch)
-        out.append(f'<text x="{x * CW}" y="{PAD_Y + y * RH + 10}" class="{cls} d{bucket}">{ch}</text>')
-    out.append("</g>")
+        groups.setdefault(bucket, {}).setdefault(cls, []).append((x, y, ch))
+    title = []
+    for bucket in sorted(groups):
+        title += groups[bucket].pop("t", [])
+        out.append(f'<g class="w d{bucket}">')
+        out += [text_run(cls, glyphs) for cls, glyphs in sorted(groups[bucket].items())]
+        out.append("</g>")
+    out.append(text_run("t", title))
     sub_y = PAD_Y + sub_row * RH + 12
     sub = SUBTITLE.replace("peal.dev", "<tspan class=\"c4\">peal.dev</tspan>")
     out.append(f'<text x="{W / 2}" y="{sub_y}" text-anchor="middle" class="s">{sub}</text>')
-    out.append(f'<rect class="scan" x="0" y="0" width="300" height="{H}" fill="url(#sg)"/>')
     out.append("</svg>")
 
     dest = Path(__file__).resolve().parent.parent / "assets" / "ascii-hero.svg"
