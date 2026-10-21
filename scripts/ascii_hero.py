@@ -13,8 +13,8 @@ W, H = 1200, 380
 SCALE = 1.5  # output px per layout px, for sharper glyphs on retina
 CX, CY, R = W / 2, 150, 118  # the pearl
 RAMP = " .,:-=+*#%@"
-BG = (13, 17, 23)  # GitHub dark background, so the edges disappear
-INK = (236, 236, 232)  # warm off-white
+BG = (255, 255, 255)  # GitHub light background, so the edges disappear
+INK = (17, 17, 17)
 ACCENT = "#f97316"
 NAME = "robert seghedi"
 MONO = "/System/Library/Fonts/Menlo.ttc"
@@ -55,7 +55,7 @@ def main():
     dot_w = draw.textlength(".", font=name_font)
     x = (s(W) - name_w - dot_w) / 2
     for ch in NAME:
-        draw.text((x, s(H - 48)), ch, font=name_font, fill=(139, 148, 158), anchor="ls")
+        draw.text((x, s(H - 48)), ch, font=name_font, fill=(110, 119, 129), anchor="ls")
         x += draw.textlength(ch, font=name_font) + tracking
     draw.text((x - tracking + s(2), s(H - 48)), ".", font=name_font, fill=ACCENT, anchor="ls")
 
@@ -78,7 +78,7 @@ def main():
             ch = RAMP[min(int(v * len(RAMP)), len(RAMP) - 1)]
             if ch == " ":
                 continue
-            fill = tuple(round(b + (i - b) * (0.25 + 0.75 * v)) for i, b in zip(INK, BG))
+            fill = tuple(round(b + (i - b) * (0.12 + 0.88 * v)) for i, b in zip(INK, BG))
             draw.text((s(col * CW), s(row * RH + 10)), ch, font=glyph_font, fill=fill, anchor="ls")
         frames.append(frame)
 
