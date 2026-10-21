@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/ascii-hero.gif" alt="robert seghedi." width="100%" />
+  <img src="./assets/pearl.gif" alt="robert seghedi." width="100%" />
 </p>
 
 <p align="center">

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generates assets/ascii-hero.gif: a single ASCII pearl with light slowly drifting across it.
+"""Generates assets/pearl.gif: a single ASCII pearl with light slowly drifting across it.
 
-Run from the repo root: python3 scripts/ascii_hero.py  (needs Pillow and macOS system fonts)
+Run from the repo root: python3 scripts/pearl.py  (needs Pillow and macOS system fonts)
 """
 import math
 from pathlib import Path
@@ -85,7 +85,7 @@ def main():
     palette = frames[0].quantize(colors=64, method=Image.Quantize.MEDIANCUT)
     frames = [f.quantize(palette=palette, dither=Image.Dither.NONE) for f in frames]
 
-    dest = Path(__file__).resolve().parent.parent / "assets" / "ascii-hero.gif"
+    dest = Path(__file__).resolve().parent.parent / "assets" / "pearl.gif"
     dest.parent.mkdir(exist_ok=True)
     frames[0].save(dest, save_all=True, append_images=frames[1:], duration=FRAME_MS, loop=0, optimize=True)
     print(f"{dest} — {len(cells)} cells, {len(frames)} frames, {dest.stat().st_size / 1024:.0f} KB")
