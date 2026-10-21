@@ -1,6 +1,6 @@
 <!-- Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:f97316,100:fb923c&height=190&section=header&text=Robert%20Seghedi&fontSize=48&fontColor=ffffff&fontAlignY=36&desc=co-founder%20%40%20peal.dev%20%E2%80%A2%20shipping%20at%203am%20from%20Romania&descAlignY=58&descSize=16&animation=fadeIn" width="100%" />
+  <img src="./assets/ascii-hero.svg" alt="Robert Seghedi — co-founder @ peal.dev" width="100%" />
 </p>
 
 <p align="center">
